@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #383838;
+
+}
 
 * {
   margin: 0;
@@ -7,11 +13,95 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  background-color: #f1f1f1;
+  font-family: 'Muli', sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
 }
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 1.875rem;
+  max-width: 100%;
+  width: 21.875rem;
+}
+
+.progress-container::before {
+  content: '';
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: .25rem;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: .25rem;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: f1f1f1;
+  color: e2e2e2;
+  border-radius: 50%;
+  height: 1.875rem;
+  width: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: .1875rem solid var(--line-border-empty);
+  transition: 0.3s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: none;
+  border-radius: .375rem;
+  cursor: pointer;
+  font-family: inherit;
+  padding: .5rem 1.875rem;
+  margin: .3125rem;
+  font-size: .875rem;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
+
+
+
+
+
